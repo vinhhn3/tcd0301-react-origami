@@ -1,9 +1,13 @@
 import React from "react";
+import Aside from "./Aside";
 
 const Main = () => {
   return (
-    <div>
-      <h1>This is Main content</h1>
+    <div className="Container">
+      <Aside />
+      <div className="Main">
+        <h1>This is Main content</h1>
+      </div>
     </div>
   );
 };

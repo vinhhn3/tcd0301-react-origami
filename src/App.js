@@ -5,9 +5,8 @@ import Main from "./pages/Main";
 import Navbar from "./pages/Navbar";
 function App() {
   return (
-    <div className="container">
+    <div className="App">
       <Navbar />
-      <Aside />
       <Main />
       <Footer />
     </div>
