@@ -1,38 +1,36 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Post from "../components/posts/Post";
 import Aside from "./Aside";
 
 const Main = () => {
-  const [posts, setPost] = useState([
-    {
-      id: 1,
-      description: "Desc 1",
-      author: "author 1",
-    },
-    {
-      id: 2,
-      description: "Desc 2",
-      author: "author 2",
-    },
-    {
-      id: 3,
-      description: "Desc 3",
-      author: "author 3",
-    },
-  ]);
+  const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    setIsLoading(true);
+    var response = await axios.get("http://localhost:9999/api/origami/all");
+    setPosts(response.data);
+    setIsLoading(false);
+  }, []);
+
   return (
     <div className="Container">
       <Aside />
       <div className="Main">
-        <div className="Posts">
-          {posts.map((post) => (
-            <Post
-              key={post.id}
-              description={post.description}
-              author={post.author}
-            />
-          ))}
-        </div>
+        {isLoading ? (
+          <h1>Loading ...</h1>
+        ) : (
+          <div className="Posts">
+            {posts.map((post) => (
+              <Post
+                key={post._id}
+                description={post.description}
+                author={post.author.username}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
