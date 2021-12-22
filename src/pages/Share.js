@@ -3,7 +3,7 @@ import Posts from "../components/posts/Posts";
 
 const Share = () => {
   return (
-    <div className="input">
+    <div className="Input">
       <div>
         <h1>Share your thoughts ...</h1>
         <textarea></textarea>
