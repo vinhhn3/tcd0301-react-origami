@@ -9,11 +9,13 @@ const Home = () => {
   return (
     <div className="Container">
       <Aside />
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/share" component={Share} />
-        <Route exact path="/register" component={Register} />
-      </Switch>
+      <div className="Main">
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/share" component={Share} />
+          <Route exact path="/register" component={Register} />
+        </Switch>
+      </div>
     </div>
   );
 };
