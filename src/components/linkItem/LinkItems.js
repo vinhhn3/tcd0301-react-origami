@@ -1,32 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import blueBird from "../../assets/blue-origami-bird-flipped.png";
 import whiteBird from "../../assets/white-origami-bird.png";
+import OrigamiContext from "../../context/origami/origamiContext";
 import LinkItem from "./LinkItem";
 
 const LinkItems = ({ logo }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [linkItems, setLinkItems] = useState([]);
-  useEffect(() => {
-    if (isLoggedIn) {
-      setLinkItems([
-        {
-          id: 1,
-          title: "Post",
-          url: "/",
-        },
-        {
-          id: 2,
-          title: "Share",
-          url: "/share",
-        },
-        {
-          id: 3,
-          title: "Profile",
-          url: "/profile",
-        },
-      ]);
-    }
-  });
+  const origamiContext = useContext(OrigamiContext);
+  const { linkItems } = origamiContext;
+
   return (
     <ul>
       {logo === "navbar" && <img src={whiteBird} alt="" />}
