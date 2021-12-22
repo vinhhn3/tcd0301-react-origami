@@ -23,7 +23,7 @@ const LinkItems = ({ logo }) => {
     {
       id: 4,
       title: "Login",
-      url: "",
+      url: "/login",
     },
     {
       id: 5,

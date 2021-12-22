@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import Login from "../../pages/Login";
 import Main from "../../pages/Main";
 import Register from "../../pages/Register";
 import Share from "../../pages/Share";
@@ -14,6 +15,7 @@ const Home = () => {
           <Route exact path="/" component={Main} />
           <Route exact path="/share" component={Share} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </div>
     </div>
