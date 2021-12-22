@@ -14,6 +14,7 @@ const Posts = () => {
   }, []);
   return (
     <>
+      <h1>Publications</h1>
       {isLoading ? (
         <h1>Loading ...</h1>
       ) : (

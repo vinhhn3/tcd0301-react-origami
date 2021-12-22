@@ -7,57 +7,57 @@ const LinkItems = ({ logo }) => {
   const [linkItems, setLinkItems] = useState([
     {
       id: 1,
-      title: "Going to 1",
+      title: "Post",
       url: "",
     },
     {
       id: 2,
-      title: "Going to 2",
+      title: "Register",
       url: "",
     },
     {
       id: 3,
-      title: "Going to 3",
+      title: "Login",
       url: "",
     },
     {
       id: 4,
-      title: "Going to 4",
+      title: "Profile",
       url: "",
     },
     {
       id: 5,
-      title: "Going to 5",
+      title: "#####",
       url: "",
     },
     {
       id: 6,
-      title: "Going to 6",
+      title: "#####",
       url: "",
     },
     {
       id: 7,
-      title: "Going to 7",
+      title: "#####",
       url: "",
     },
     {
       id: 8,
-      title: "Going to 8",
+      title: "#####",
       url: "",
     },
     {
       id: 9,
-      title: "Going to 9",
+      title: "#####",
       url: "",
     },
     {
       id: 10,
-      title: "Going to 10",
+      title: "#####",
       url: "",
     },
     {
       id: 11,
-      title: "Going to 11",
+      title: "#####",
       url: "",
     },
   ]);

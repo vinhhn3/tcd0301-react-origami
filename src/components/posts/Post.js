@@ -5,7 +5,7 @@ const Post = ({ description, author }) => {
   return (
     <div className="Post">
       <img src={birdLogo} alt="logo" />
-      <p className="description">{description}</p>
+      <p className="description">count - {description}</p>
       <div>
         <span>
           <small>Author:</small>
