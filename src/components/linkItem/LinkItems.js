@@ -8,26 +8,26 @@ const LinkItems = ({ logo }) => {
     {
       id: 1,
       title: "Post",
-      url: "",
+      url: "/",
     },
     {
       id: 2,
+      title: "Share",
+      url: "/share",
+    },
+    {
+      id: 3,
       title: "Register",
       url: "",
     },
     {
-      id: 3,
+      id: 4,
       title: "Login",
       url: "",
     },
     {
-      id: 4,
-      title: "Profile",
-      url: "",
-    },
-    {
       id: 5,
-      title: "#####",
+      title: "Profile",
       url: "",
     },
     {
