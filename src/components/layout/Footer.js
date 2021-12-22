@@ -1,5 +1,5 @@
 import React from "react";
-import LinkItems from "../components/linkItem/LinkItems";
+import LinkItems from "../linkItem/LinkItems";
 
 const Footer = () => {
   return (

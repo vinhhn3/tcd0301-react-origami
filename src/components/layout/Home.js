@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import Main from "../../pages/Main";
+import Register from "../../pages/Register";
+import Share from "../../pages/Share";
 import Aside from "./Aside";
-import Main from "./Main";
-import Register from "./Register";
-import Share from "./Share";
 
 const Home = () => {
   return (
