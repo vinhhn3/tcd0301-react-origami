@@ -18,7 +18,7 @@ const LinkItems = ({ logo }) => {
     {
       id: 3,
       title: "Register",
-      url: "",
+      url: "/register",
     },
     {
       id: 4,
