@@ -28,7 +28,7 @@ const LinkItems = ({ logo }) => {
     {
       id: 5,
       title: "Profile",
-      url: "",
+      url: "/profile",
     },
     {
       id: 6,
