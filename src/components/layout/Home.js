@@ -17,16 +17,16 @@ const Home = () => {
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/share">
-          {!isLoggedIn ? <Redirect to="/login" /> : <Share />}
+          {!isLoggedIn ? <Redirect to="/register" /> : <Share />}
         </Route>
         <Route exact path="/profile">
-          {!isLoggedIn ? <Redirect to="/login" /> : <Profile />}
+          {!isLoggedIn ? <Redirect to="/register" /> : <Profile />}
         </Route>
         <Route exact path="/register">
-          {isLoggedIn ? <Redirect to="/" /> : <Register />}
+          {isLoggedIn ? <Redirect to="/profile" /> : <Register />}
         </Route>
         <Route exact path="/login">
-          {isLoggedIn ? <Redirect to="/" /> : <Login />}
+          {isLoggedIn ? <Redirect to="/profile" /> : <Login />}
         </Route>
         <Route path="" component={NotFound} />
       </Switch>

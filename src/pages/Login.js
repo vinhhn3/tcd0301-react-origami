@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
 import OrigamiContext from "../context/origami/origamiContext";
 
 const Login = () => {
@@ -9,8 +8,6 @@ const Login = () => {
     username: "",
     password: "",
   });
-
-  let history = useHistory();
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -28,7 +25,6 @@ const Login = () => {
         username: "",
         password: "",
       });
-      history.push("/");
     }
   };
   return (

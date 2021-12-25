@@ -6,7 +6,7 @@ export default (state, action) => {
     case USER_LOGIN:
       return {
         ...state,
-        isLoggedIn: true,
+
         linkItems: [
           {
             id: 1,
@@ -24,6 +24,7 @@ export default (state, action) => {
             url: "/profile",
           },
         ],
+        isLoggedIn: true,
       };
     default:
       return state;
