@@ -1,5 +1,6 @@
 import {
   GET_PRIVATE_POSTS,
+  GET_PUBLIC_POSTS,
   SET_LOADING,
   USER_LOGIN,
   USER_LOGOUT,
@@ -63,6 +64,12 @@ export default (state, action) => {
       return {
         ...state,
         privatePosts: action.payload,
+        isLoading: false,
+      };
+    case GET_PUBLIC_POSTS:
+      return {
+        ...state,
+        publicPosts: action.payload.reverse(),
         isLoading: false,
       };
     default:

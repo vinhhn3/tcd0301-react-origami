@@ -1,16 +1,13 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
+import OrigamiContext from "../../context/origami/origamiContext";
 import Post from "./Post";
 
 const Posts = () => {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const origamiContext = useContext(OrigamiContext);
+  const { publicPosts, getPublicPosts, isLoading } = origamiContext;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
-    setIsLoading(true);
-    var response = await axios.get("http://localhost:9999/api/origami/all");
-    setPosts(response.data);
-    setIsLoading(false);
+    getPublicPosts();
   }, []);
   return (
     <>
@@ -18,7 +15,7 @@ const Posts = () => {
         <h1>Loading ...</h1>
       ) : (
         <div className="Posts">
-          {posts.map((post) => (
+          {publicPosts.map((post) => (
             <Post
               key={post._id}
               description={post.description}

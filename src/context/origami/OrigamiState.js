@@ -2,6 +2,7 @@ import axios from "axios";
 import { useReducer } from "react";
 import {
   GET_PRIVATE_POSTS,
+  GET_PUBLIC_POSTS,
   SET_LOADING,
   USER_LOGIN,
   USER_LOGOUT,
@@ -32,6 +33,7 @@ const OrigamiState = (props) => {
     username: "",
     privatePosts: [],
     isLoading: false,
+    publicPosts: [],
   };
 
   const [state, dispatch] = useReducer(OrigamiReducer, initialState);
@@ -95,6 +97,15 @@ const OrigamiState = (props) => {
     }
   };
 
+  const getPublicPosts = async () => {
+    setLoading();
+    var response = await axios.get("http://localhost:9999/api/origami/all");
+    dispatch({
+      type: GET_PUBLIC_POSTS,
+      payload: response.data,
+    });
+  };
+
   const setLoading = () => {
     dispatch({
       type: SET_LOADING,
@@ -121,11 +132,13 @@ const OrigamiState = (props) => {
         username: state.username,
         privatePosts: state.privatePosts,
         isLoading: state.isLoading,
+        publicPosts: state.publicPosts,
         loginUser,
         registerUser,
         logoutUser,
         getPrivatePosts,
         createPost,
+        getPublicPosts,
       }}
     >
       {props.children}

@@ -7,7 +7,7 @@ const Register = () => {
     password: "",
   });
   const [rePassword, setRePassword] = useState("");
-  const { registerUser, isLoggedIn, displayErrorMessage } = origamiContext;
+  const { registerUser } = origamiContext;
   const onSubmit = (e) => {
     e.preventDefault();
     if (register.password !== rePassword) {
