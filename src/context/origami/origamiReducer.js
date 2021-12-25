@@ -30,6 +30,7 @@ export default (state, action) => {
         ],
         isLoggedIn: true,
         username: action.payload.username,
+        numberOfPrivatePosts: action.payload.posts.length,
       };
     case USER_LOGOUT:
       return {

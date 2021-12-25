@@ -81,7 +81,7 @@ const OrigamiState = (props) => {
 
   const getPrivatePosts = async () => {
     var response = await axios.get(
-      "http://localhost:9999/api/origami/mine?limit=3",
+      "http://localhost:9999/api/origami/mine?limit",
       {
         withCredentials: true,
       }
@@ -101,6 +101,18 @@ const OrigamiState = (props) => {
     });
   };
 
+  const createPost = async (text) => {
+    var response = await axios.post(
+      "http://localhost:9999/api/origami/",
+      { description: text },
+      { withCredentials: true }
+    );
+
+    if (response.status === 200) {
+      getPrivatePosts();
+    }
+  };
+
   return (
     <OrigamiContext.Provider
       value={{
@@ -113,6 +125,7 @@ const OrigamiState = (props) => {
         registerUser,
         logoutUser,
         getPrivatePosts,
+        createPost,
       }}
     >
       {props.children}

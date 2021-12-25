@@ -11,13 +11,16 @@ const PrivatePosts = () => {
         <h1>Loading ...</h1>
       ) : (
         <div className="Posts">
-          {privatePosts.map((post) => (
-            <Post
-              key={post._id}
-              description={post.description}
-              author={post.author.username}
-            />
-          ))}
+          {privatePosts
+            .slice(-3)
+            .reverse()
+            .map((post) => (
+              <Post
+                key={post._id}
+                description={post.description}
+                author={post.author.username}
+              />
+            ))}
         </div>
       )}
     </>
